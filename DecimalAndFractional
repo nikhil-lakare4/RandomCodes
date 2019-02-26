@@ -1,0 +1,27 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+int main(){
+
+	float n;
+	cin >> n;
+	int i = int(n);
+	int num = round(100*(n-i));
+	int den = 100;
+	while(num%2 == 0 && den%2 == 0)
+	{
+		num = num/2;
+		den/=2;
+	}
+	int t = den%num;
+	if(t == 0){
+		den = den/num;
+		num = 1;
+	}else
+	{
+		num = num/t;
+		den = den/t;
+	}
+	cout << i << " " << num << "/" << den << endl;
+	return 0;
+}
